@@ -69,7 +69,7 @@ class Number
     }
     
     /**
-     * Get the word for ones place of th egiven number.
+     * Get the word for ones place of the given number.
      * @param string|int $number
      */
     protected function getOnes($number)
@@ -99,7 +99,7 @@ class Number
             return $this->getOnes($ones) . 'teen';
         }
         
-        //non-teens - get the tens plac and add the ones (trim for '0')
+        //non-teens - get the tens place and add the ones (trim for '0')
         return trim($this->tens[$tens] . ' ' . $this->getOnes($number));
     }
 
