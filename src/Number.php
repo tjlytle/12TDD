@@ -20,6 +20,7 @@ class Number
         2 => 'twelve',
         3 => 'thirteen',
         5 => 'fifteen',
+        8 => 'eighteen'
     );
 
     protected $tens = array(
@@ -39,7 +40,14 @@ class Number
         1 => 'thousand',
         2 => 'million',
         3 => 'billion',
-        4 => 'trillion'
+        4 => 'trillion',
+        5 => 'quadrillion',
+        6 => 'quintillion',
+        7 => 'sextillion',
+        8 => 'septillion',
+        9 => 'octillion',
+        10 => 'nonillion',
+        11 => 'decillion'        
     );
             
     protected $value;
@@ -47,7 +55,7 @@ class Number
     
     public function __construct($value)
     {
-        $this->value = $value;
+        $this->value = filter_var($value, FILTER_SANITIZE_NUMBER_INT);
     }
     
     /**
@@ -62,10 +70,24 @@ class Number
             //reverse the number again, so it's ordered correctly
             $number = strrev($number);
             //get the words for that group, passing the thousands place
-            $words[] = trim($this->getThousands($number, $position));
+            $word = trim($this->getThousands($number, $position));
+            
+            //skip if there's not anything to add 
+            if(empty($word)){
+                continue;
+            }
+            
+            $words[] = $word;
         }
         //reverse again to get the groups ordered, and add ','
-        return implode(', ', array_reverse($words));
+        $string = implode(', ', array_reverse($words));
+        
+        //if there's nothing, then the number is zero
+        if(empty($string)){
+            $string = 'zero';
+        }
+        
+        return $string;
     }
     
     /**
@@ -141,8 +163,14 @@ class Number
      */
     protected function getThousands($number, $offset = 0)
     {
-        //add the thousands word (if it's set), trimming for the '0' case
-        return trim($this->getHundreds($number) . ' ' . $this->thousands[$offset]);
+        //add the thousands word (if it's set), trimming for the '0' case - but
+        //only if there's a word for this group
+        $hundreds = $this->getHundreds($number);
+        if(empty($hundreds)){
+            return;
+        }
+        
+        return trim($hundreds . ' ' . $this->thousands[$offset]);
     }
     
     /**
