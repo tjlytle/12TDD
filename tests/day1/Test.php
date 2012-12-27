@@ -33,7 +33,7 @@ class Test extends PHPUnit_Framework_TestCase
         $this->assertEquals($min, $sequence->min());
         $this->assertEquals($max, $sequence->max());
         $this->assertEquals($count, $sequence->count());
-        $this->assertEquals($average, $sequence->average());
+        $this->assertEquals(round($average,4), round($sequence->average(),4));
     }
     
     public function dataset()
