@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . '/../../src/day1/Sequence.php';
-
 /**
  * Your task is to process a sequence of integer numbers
  * to determine the following statistics:
@@ -17,7 +15,7 @@ require_once __DIR__ . '/../../src/day1/Sequence.php';
  * o) number of elements in the sequence = 6
  * o) average value = 21.833333
  */
-class Test extends PHPUnit_Framework_TestCase 
+class SequenceTest extends PHPUnit_Framework_TestCase 
 {
     /**
      * @param array $values

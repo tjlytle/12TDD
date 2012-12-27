@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . '/../../src/day2/Number.php';
-
 /**
  * Spell out a number. For example
  * 
@@ -15,7 +13,7 @@ require_once __DIR__ . '/../../src/day2/Number.php';
  * twelve thousand,
  * six hundred and three
  */
-class Test extends PHPUnit_Framework_TestCase 
+class NumberTest extends PHPUnit_Framework_TestCase 
 {
     /**
      * @param array $values
