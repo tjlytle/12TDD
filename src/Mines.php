@@ -130,15 +130,7 @@ class Mines
     {
         list($x, $y) = $this->getCoords($cell);
         
-        $cells = array();
-        
-        //identify surrounding cells
-        if($y != 0){
-            $cells[] = $cell-1;
-            $cells[] = $cell-1-$this->width;
-            $cells[] = $cell-1+$this->width;
-        }
-        
+        //TODO: cell based math not yet applied
         foreach(array($x-1, $x, $x+1) as $xSearch){
             if($xSearch < 0 OR $xSearch >= $this->height){
                 continue;
