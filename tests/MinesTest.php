@@ -43,6 +43,8 @@ class MineTest extends PHPUnit_Framework_TestCase
     {
         return array(
             array("*...\n..*.\n....", "*211\n12*1\n0111"),
+            array(".....\n.***.\n.*.*.\n.***.\n.....", "12321\n2***2\n3*8*3\n2***2\n12321"),
+            array(".....\n.....\n..*..\n.....\n.....", "00000\n01110\n01*10\n01110\n00000"),
         );
     }
     
