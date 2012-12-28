@@ -16,11 +16,8 @@
 class NumberTest extends PHPUnit_Framework_TestCase 
 {
     /**
-     * @param array $values
-     * @param int $min
-     * @param int $max
-     * @param int $count
-     * @param float $average
+     * @param int $value
+     * @param string $string
      * @dataProvider dataset
      */
     public function testNumber($value, $string)
