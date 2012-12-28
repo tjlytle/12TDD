@@ -24,25 +24,48 @@
  */
 class MineTest extends PHPUnit_Framework_TestCase 
 {
+    protected $testGrid = array(array('*', '.', '.', '.'),
+                      array('.', '.', '*', '.'),
+                      array('.', '.', '.', '.'));
     /**
-     * @param array $values
-     * @param int $min
-     * @param int $max
-     * @param int $count
-     * @param float $average
+     * Test of input to output.
+     * @param string $input
+     * @param string $output
      * @dataProvider dataset
      */
     public function testMines($input, $output)
     {
         $mines = new Mines($input);
-        $this->assertEquals($output, $mines->getHints());
+        $this->assertEquals($output, $mines->getHintString());
     }
     
     public function dataset()
     {
         return array(
-            array("*...\n..*.\n....", " *211\n12*1\n0111"),
+            array("*...\n..*.\n....", "*211\n12*1\n0111"),
         );
+    }
+    
+    public function testInputArray()
+    {
+        $mines = new Mines($this->testGrid);
+        $this->assertEquals($this->testGrid, $mines->getGrid());
+    }
+    
+    public function testInputLines()
+    {
+        $mines = new Mines(array_map(function($value){return implode('', $value);}, $this->testGrid));
+        $this->assertEquals($this->testGrid, $mines->getGrid());
+    }
+    
+    public function testInputString()
+    {
+        $grid = $this->testGrid;
+        foreach($grid as $index => $row){
+            $grid[$index] = implode('', $row);
+        }
+        $mines = new Mines(implode("\n", $grid));
+        $this->assertEquals($this->testGrid, $mines->getGrid());
     }
 }
 
