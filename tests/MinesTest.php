@@ -45,6 +45,9 @@ class MineTest extends PHPUnit_Framework_TestCase
             array("*...\n..*.\n....", "*211\n12*1\n0111"),
             array(".....\n.***.\n.*.*.\n.***.\n.....", "12321\n2***2\n3*8*3\n2***2\n12321"),
             array(".....\n.....\n..*..\n.....\n.....", "00000\n01110\n01*10\n01110\n00000"),
+            array("...\n...\n.*.\n...\n...", "000\n111\n1*1\n111\n000"),
+            array("..........\n....*.....\n..........", "0001110000\n0001*10000\n0001110000"),
+            array("..**....\n.......*\n..*..*.*\n..****..\n........\n*.......", "01**1011\n0233213*\n02*44*4*\n02****31\n12233210\n*1000000"),
         );
     }
     
@@ -68,6 +71,29 @@ class MineTest extends PHPUnit_Framework_TestCase
         }
         $mines = new Mines(implode("\n", $grid));
         $this->assertEquals($this->testGrid, $mines->getGrid());
+    }
+    
+    public function testInvalidGrids()
+    {
+        try{
+            $mines = new Mines(array());
+            $this->fail('was able to use empty array as grid');
+        } catch (UnexpectedValueException $e){}
+        
+        try{
+            $mines = new Mines(array(array()));
+            $this->fail('was able to use empty row in grid');
+        } catch (UnexpectedValueException $e){}
+        
+        try{
+            $mines = new Mines("...\n....\n...");
+            $this->fail('was able use grid with invalid width');
+        } catch (UnexpectedValueException $e){}
+        
+        try{
+            $mines = new Mines("...\n.8.\n...");
+            $this->fail('was able use grid with invalid character');
+        } catch (UnexpectedValueException $e){}
     }
 }
 
