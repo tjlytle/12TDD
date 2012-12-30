@@ -76,7 +76,7 @@ randomly. After Monty Hall opens a door with a goat, he will ask you to decide
 whether you want to stay with your first choice or to switch to the last 
 remaining door.
 
-For example:
+**For example:**
 Imagine that you chose Door 1 and the host opens Door 3, which has a goat. He 
 then asks you “Do you want to switch to Door Number 2?” Is it to your advantage 
 to change your choice?
@@ -89,5 +89,31 @@ unopened doors.
 Simulate at least a thousand games using three doors for each strategy and show 
 the results in such a way as to make it easy to compare the effects of each 
 strategy.
+
+Day 5
+-----
+
+Write a program that prints the numbers from 1 to 100. But for multiples of 
+three print “Fizz” instead of the number and for the multiples of five print 
+"Buzz". For numbers which are multiples of both three and five print 
+"FizzBuzz".
+
+Sample output:
+
+    1
+    2
+    Fizz
+    4
+    Buzz
+    Fizz
+    7
+    8
+    Fizz
+    Buzz
+    11
+    Fizz
+    13
+    14
+    FizzBuzz
 
 [1]: http://www.wiredtothemoon.com/2012/12/12-tdds-of-christmas/
