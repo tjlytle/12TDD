@@ -1,4 +1,8 @@
 <?php
+/**
+ * This is *not* tested, but it consumes the code covered by tests.
+ */
+
 require_once __DIR__ . '/Monty.php';
 require_once __DIR__ . '/MontySimulator.php';
 
