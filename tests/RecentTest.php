@@ -25,7 +25,7 @@ class RecentTest extends PHPUnit_Framework_TestCase
     {
         $list = new Recent();
         $this->assertEquals(0, count($list));
-        $this->assertEquals(null, $this->getNext());
+        $this->assertEquals(null, $list->getNext());
     }
 
     /**
