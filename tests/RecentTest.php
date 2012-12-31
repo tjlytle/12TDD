@@ -59,7 +59,7 @@ class RecentTest extends PHPUnit_Framework_TestCase
         $list->add($first);
         $list->add($middle);
         $list->add($last);
-        $this->add($middle);
+        $list->add($middle);
         
         $this->assertEquals($middle, $list->getNext());
         $this->assertEquals($last, $list->getNext());
