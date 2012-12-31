@@ -87,6 +87,9 @@ class RecentTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($two, $list[2]);
         $this->assertEquals($three, $list->peek(3));
         $this->assertEquals($four, $list[4]);
+        
+        $this->assertEquals($one, $list->getNext());
+        $this->assertEquals($two, $list[1]);
     }
 
     /**
@@ -123,8 +126,12 @@ class RecentTest extends PHPUnit_Framework_TestCase
         
         try{
             $list->add($input);
-            $this->fail('allowed invalid input');
-        } catch (Exception $e) {}
+        } catch (Exception $e) {
+            return;
+        }
+
+        $this->fail('allowed invalid input');
+        
     }
     
     public function invalidInput()
@@ -133,6 +140,7 @@ class RecentTest extends PHPUnit_Framework_TestCase
             array(''),
             array(null),
             array(array()),
+            array(array('test')),
             array(new stdClass())
         );
     }
