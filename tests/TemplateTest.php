@@ -41,7 +41,7 @@ class TemplateTest extends PHPUnit_Framework_TestCase
         $template = new Template();
         $template['firstName'] = "Cenk";
         $template['lastName'] = "Civici";
-        $output = $template->renderString('Hello {$firstName} ${lastName}');
+        $output = $template->renderString('Hello {$firstName} {$lastName}');
         
         $this->assertEquals("Hello Cenk Civici", $output);
     }
@@ -57,7 +57,7 @@ class TemplateTest extends PHPUnit_Framework_TestCase
     {
         $template = new Template();
         $template['name'] = "Cenk";
-        $output = $template->renderString('Hello ${$name}}');
+        $output = $template->renderString('Hello ${{$name}}');
         
         $this->assertEquals('Hello ${Cenk}', $output);
     }
