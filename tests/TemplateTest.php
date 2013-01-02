@@ -31,7 +31,7 @@ class TemplateTest extends PHPUnit_Framework_TestCase
     {
         $template = new Template();
         $template['name'] = "Cenk";
-        $output = $template->renderString("Hello {$name}");
+        $output = $template->renderString('Hello {$name}');
         
         $this->assertEquals("Hello Cenk", $output);
     }
@@ -41,7 +41,7 @@ class TemplateTest extends PHPUnit_Framework_TestCase
         $template = new Template();
         $template['firstName'] = "Cenk";
         $template['lastName'] = "Civici";
-        $output = $template->renderString("Hello {$firstName} ${lastName}");
+        $output = $template->renderString('Hello {$firstName} ${lastName}');
         
         $this->assertEquals("Hello Cenk Civici", $output);
     }
@@ -50,15 +50,15 @@ class TemplateTest extends PHPUnit_Framework_TestCase
     {
         $this->setExpectedException('MissingValueException');
         $template = new Template();
-        $output = $template->renderString("Hello {$firstName} ");
+        $output = $template->renderString('Hello {$firstName} ');
     }
     
     public function testComplexCases()
     {
         $template = new Template();
         $template['name'] = "Cenk";
-        $output = $template->renderString("Hello ${$name}}");
+        $output = $template->renderString('Hello ${$name}}');
         
-        $this->assertEquals("Hello ${Cenk}", $output);
+        $this->assertEquals('Hello ${Cenk}', $output);
     }
 }
