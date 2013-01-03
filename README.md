@@ -164,5 +164,29 @@ be provided. For example, if name="Cenk" and the template string is "Hello
 - templateEngine.evaluate("Hello ${$name}}", mapOfVariables);
 - should evaluate to "Hello ${Cenk}"
 
+Day 8
+-----
+
+In mathematics we denote a range using open-closed bracket notation: [0,10) 
+means all real numbers equal to or greater than zero, but less than ten. So 0 
+lies in this range, while 10 does not.
+
+**Develop an integer range class, that has the following operations:**
+- Construction: r = new Range(0,10)
+- Checking whether an integer lies in the range. 
+- Intersection of two ranges.
+
+**Develop another class to represent floating point ranges, with the same 
+operations:**
+
+While developing the floating point range class, think about how it differs 
+from the integer range.
+
+Is it possible to modify the behaviour of one of them to become more consistent 
+with the behaviour of the other? The more uniform their behaviour, the easier 
+the classes will be to use.
+
+If you modify one of the classes – do you feel confident you do not break 
+anything? If you don’t feel confident, what can you do about that?
 
 [1]: http://www.wiredtothemoon.com/2012/12/12-tdds-of-christmas/
