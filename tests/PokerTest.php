@@ -26,6 +26,8 @@ class PokerTest extends PHPUnit_Framework_TestCase
             array('TH JH QH KH AH', 'TD JD QD KD AD', 0),
             array('3D 3H 3S 2D 2S', '4D 4S 4C 2C 2H', -1),
             array('AD AH 4D 2H 8D', 'AC AS 8C 4H 3D', -1),
+            array('AD AH 4D 4H 8D', 'AC AS 4C 4S 3D', 1),
+            array('AD AH 4D 4H 8D', 'AC AS 3C 3S 8C', 1),
             
         );
     }

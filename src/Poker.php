@@ -30,6 +30,22 @@ class Poker
 
         if($a['score'][0] == $b['score'][0]){ //same hand, have to check values
             switch($a['score'][0]){
+                case self::TWO:
+                    for($i = 0; $i < 2; $i++){
+                        $compare = $this->compareValues($a['score'][1][$i], $b['score'][1][$i]); //compare the value of the set
+                        if($compare != 0){
+                            return $compare;
+                        }                        
+                    }
+                    
+                    for($card = 4; $card >=0; $card--){
+                        $compare = $this->compareValues($a['hand'][$card][0], $b['hand'][$card][0]);
+                        if($compare != 0){
+                            return $compare;
+                        }
+                    }
+                    
+                    break;
                 case self::PAIR:
                     $compare = $this->compareValues($a['score'][1], $b['score'][1]); //compare the value of the set
                     if($compare != 0){
