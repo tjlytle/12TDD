@@ -234,4 +234,46 @@ In this case, it is not possible to call Bob because the phone exchange would
 direct your call to the emergency line as soon as you dialled the first three 
 digits of Bob’s phone number. So this list would not be consistent.
 
+Day 11
+------
+Your job is to rank pairs of poker hands and to indicate which, if either, has 
+a higher rank.
+
+Examples:
+Input: Black: 2H 3D 5S 9C KD White: 2C 3H 4S 8C AH
+Output: White wins – high card: Ace
+
+Input: Black: 2H 4S 4C 2D 4H White: 2S 8S AS QS 3S
+Output: Black wins – full house
+
+Input: Black: 2H 3D 5S 9C KD White: 2C 3H 4S 8C KH
+Output: Black wins – high card: 9
+
+Input: Black: 2H 3D 5S 9C KD White: 2D 3H 5C 9S KH
+Output: Tie
+
+Day 12
+------
+To try and encourage more sales of the 5 different Harry Potter books they 
+sell, a bookshop has decided to offer discounts of multiple-book purchases.
+
+One copy of any of the five books costs 8 EUR.
+
+If, however, you buy two different books, you get a 5% discount on those 
+two books.
+
+If you buy 3 different books, you get a 10% discount.
+
+If you buy 4 different books, you get a 20% discount.
+
+If you go the whole hog, and buy all 5, you get a huge 25% discount.
+
+Note that if you buy, say, four books, of which 3 are different titles, you 
+get a 10% discount on the 3 that form part of a set, but the fourth book still 
+costs 8 EUR.
+
+Your mission is to write a piece of code to calculate the price of any 
+conceivable shopping basket (containing only Harry Potter books), giving as 
+big a discount as possible.
+
 [1]: http://www.wiredtothemoon.com/2012/12/12-tdds-of-christmas/
